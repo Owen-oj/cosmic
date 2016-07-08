@@ -1,7 +1,34 @@
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
+
+// Rubyonic Files
+@import '../scss/rubyonic/partials/colors';
+@import '../scss/rubyonic/partials/typography';
+
+
+// Rubyonic Files
+@import '../scss/rubyonic/partials/mixins';
+@import '../scss/rubyonic/partials/theme';
+@import '../scss/rubyonic/partials/buttons';
+@import '../scss/rubyonic/partials/general';
+@import '../scss/rubyonic/screens/login';
+@import '../scss/rubyonic/screens/feed';
+@import '../scss/rubyonic/screens/sidebar';
+@import '../scss/rubyonic/screens/chat';
+@import '../scss/rubyonic/screens/profile';
+@import '../scss/rubyonic/screens/chat-ui';
+@import '../scss/rubyonic/screens/viewpost';
+@import '../scss/rubyonic/partials/forms';
+@import '../scss/rubyonic/screens/tinder';
+
 $z-index-tabs : 10; // Avoid overlapping
+
+
+$brand-base-color: #0E214C;
+$brand-analogous-color:#081828;
+$brand-contrast-color: #2758CC;
+$color-algorithm : w3c;
 
 $pink                 : #E12F56;
 $light-grey           : #b2b2b2;
@@ -49,28 +76,28 @@ $special-playlist-grid-margin : 2%;
 @import "www/lib/ionic/scss/ionic";
 
 // Custom fonts
-@font-face{
-    font-family: 'HelveticaNeueLight';
-    src: url('fonts/helvetica_neue_light/helvetica-neue-light.ttf');
-}
-@font-face{
-    font-family: 'HelveticaNeueUltraLight';
-    src: url('fonts/helveticaneue_ultralight/helvetica-neue-ultra-light.ttf');
-}
-@font-face{
-    font-family: 'Omnes';
-    src: url('fonts/omnes-webfont.ttf');
-}
-@font-face{
-    font-family: 'OmnesLight';
-    font-style: normal;
-    font-weight: 200;
-    src: url('fonts/omnes_light-webfont.ttf');
-}
-@font-face{
-    font-family: 'OmnesExtraLight';
-    src: url('fonts/omnes_extralight-webfont.ttf');
-}
+//@font-face{
+//    font-family: 'HelveticaNeueLight';
+//    src: url('../lib/ionic/fonts/helvetica_neue_light/helvetica-neue-light.ttf');
+//}
+//@font-face{
+//    font-family: 'HelveticaNeueUltraLight';
+//    src: url('fonts/helveticaneue_ultralight/helvetica-neue-ultra-light.ttf');
+//}
+//@font-face{
+//    font-family: 'Omnes';
+//    src: url('fonts/omnes-webfont.ttf');
+//}
+//@font-face{
+//    font-family: 'OmnesLight';
+//    font-style: normal;
+//    font-weight: 200;
+//    src: url('fonts/omnes_light-webfont.ttf');
+//}
+//@font-face{
+//    font-family: 'OmnesExtraLight';
+//    src: url('fonts/omnes_extralight-webfont.ttf');
+//}
 
 *{
     box-shadow : none !important;
@@ -244,7 +271,7 @@ play-bar{
     z-index      : 10;
     display      : table;
     table-layout : fixed;
-    background-color: $white;
+    background-color: $brand-analogous-color;
     @extend .physical-pixel-border-top;
     width :100%;
 
@@ -317,7 +344,7 @@ play-bar{
         top           : 40%;
         font-size     : $font-size-xlarge;
         text-align    : center;
-        color         : $pink;
+        color         : $brand-analogous-color;
         background    : url($player-title-blur-path) top left repeat;
         width         : 100%;
         line-height   : $font-size-xlarge;
@@ -340,7 +367,7 @@ play-bar{
     width       : 100%;
     z-index     : 2;
     /*@extend .physical-pixel-border-top;*/
-    border-top  : solid 1px $light-grey;
+    border-top  : solid 1px $brand-analogous-color;
     overflow    : hidden;
 
     .card{
@@ -401,7 +428,7 @@ play-bar{
         overflow       : hidden;
         max-width      : 100%;
 		.song{
-			color : $pink;
+			color : $brand-analogous-color;
 		}
 		.artist{
 			color : black;
