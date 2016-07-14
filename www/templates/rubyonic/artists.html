@@ -1,0 +1,50 @@
+<!-- player Screen - Refer to player.scss -->
+<ion-view view-title="Artists" hide-nav-bar="true" class="rubyonic-pane tracks-player">
+    <!--
+    setting 'hide-nav-bar="true"' above enables us to create our own header bar
+    by hiding the default one without messing with ionic's state/history management
+    -->
+
+    <ion-header-bar align-title="center" class="bar bar-ruby-header bar-transparent" ng-controller="NavigationCtrl">
+        <div class="buttons">
+            <button class="button button-clear brand-base-text-color" ng-click="goBackAStep()">
+                <i class="icon ion-ios-arrow-left"></i>
+            </button>
+        </div>
+        <h1 class="title">
+            Artists
+        </h1>
+        <div class="buttons">
+            <button class="button ruby-button-clear icon ion-ios-search brand-base-text-color" ng-click="go('app.search')"></button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+
+        <div class="player-background">
+            <div class="player-overlay">
+
+            </div>
+
+            <ion-refresher pulling-text="Pull to refresh" on-refresh="refreshArtists()"></ion-refresher>
+
+            <div class="list">
+
+                <a collection-repeat="artist in artists" class="item item-thumbnail-left" ui-sref='app.artists({artistId: artist.id})'>
+                    <img ng-src="{{::miniaturesPath}}{{artist.artwork}}">
+                    <h2>{{artist.name}}</h2>
+                    <p><b>{{artist.nbAlbums}}</b> album<span ng-if="artist.nbAlbums>1">s</span>, <b>{{artist.nbTitles}}</b> song<span ng-if="artist.nbTitles>1">s</span><span ng-if="artist.like>0">, <b>{{artist.like}}</b> <i class="icon ion-ios-heart"></i></span></p>
+                </a>
+
+            </div>
+
+        </div>
+
+    </ion-content>
+
+    <ion-footer-bar class="bar-footer">
+
+        <play-bar></play-bar>
+    </ion-footer-bar>
+
+</ion-view>

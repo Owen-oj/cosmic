@@ -1,10 +1,24 @@
-<ion-view view-title="Manage Directories">
-    <div class="bar bar-header">
-        <!--<button class="button icon ion-navicon"></button>-->
+
+<!-- player Screen - Refer to player.scss -->
+<ion-view view-title="Manage Directories" hide-nav-bar="true" class="rubyonic-pane tracks-player">
+    <!--
+    setting 'hide-nav-bar="true"' above enables us to create our own header bar
+    by hiding the default one without messing with ionic's state/history management
+    -->
+
+    <ion-header-bar align-title="center" class="bar bar-ruby-header bar-transparent">
+        <!--<div class="buttons">-->
+            <!--<button class="button button-clear brand-base-text-color" ng-click="goBackAStep()">-->
+                <!--<i class="icon ion-ios-arrow-left"></i>-->
+            <!--</button>-->
+        <!--</div>-->
         <h1 class="title">Music directories</h1>
-        <button class="button button-icon balanced ion-ios-plus-outline" ng-click="openModal()"></button>
-    </div>
-        <ion-content  scroll="true" class="has-header" has-bouncing="true">
+        <div class="buttons">
+            <button class="button button-icon balanced ion-ios-plus-outline" ng-click="openModal();"></button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="has-header" has-bouncing="true">
         <ion-list can-swipe="true" delegate-handle="directory-list">
             <ion-item class="item-icon-right" ng-repeat="directory in directories track by directory.fullPath" >
                 {{directory.fullPath}}

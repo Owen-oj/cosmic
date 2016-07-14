@@ -1,5 +1,5 @@
 // Settings
-angular.module('cosmic.controllers').controller('SettingsCtrl', function($scope,cosmicDB,$cordovaToast, $ionicPopup,$localstorage, $cordovaStatusbar,$ionicPopup) {
+angular.module('cosmic.controllers').controller('SettingsCtrl', function($scope,cosmicDB,$cordovaToast, $ionicPopup,$localstorage, $cordovaStatusbar) {
 
     $scope.isSearchingArtworks = false;
     $scope.isSearchingArtists = false;

@@ -1,0 +1,46 @@
+<!-- player Screen - Refer to player.scss -->
+<ion-view view-title="PlaylistItems" hide-nav-bar="true" class="rubyonic-pane tracks-player">
+    <!--
+    setting 'hide-nav-bar="true"' above enables us to create our own header bar
+    by hiding the default one without messing with ionic's state/history management
+    -->
+
+    <ion-header-bar align-title="center" class="bar bar-ruby-header bar-transparent" ng-controller="NavigationCtrl">
+        <div class="buttons">
+            <button class="button button-icon icon pink ion-ios-play" ng-click="playPlaylist('normal')"></button>
+        </div>
+        <div class="h1 title">{{playlistName}}</div>
+        <div class="buttons">
+            <button class="button button-icon icon pink ion-ios-shuffle-strong" ng-click="playPlaylist('shuffle')"></button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+
+        <div class="player-background">
+            <div class="player-overlay">
+
+            </div>
+
+            <div class="list">
+                <div class="item item-song two-lines" collection-repeat="title in playlist" ng-click="playTitle(title)">
+
+                    <img  ng-src="{{miniaturesPath}}{{title.artwork}}" />
+                    <h2>{{title.name}}</h2>
+                    <p>{{title.artist}}</p>
+
+                    <button class="button button-icon ion-more" ng-click="showPopover($event,title)"></button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+    <ion-footer-bar class="bar-footer">
+
+        <play-bar></play-bar>
+    </ion-footer-bar>
+
+</ion-view>

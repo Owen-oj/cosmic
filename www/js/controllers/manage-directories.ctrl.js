@@ -32,7 +32,7 @@ angular.module('cosmic.controllers').controller('ManageDirectoriesCtrl', functio
     $scope.addDirectory = function(file){
         console.log('Add directory');
         if (file.isDirectory){
-            // Check if the directory if a child of an already-included directory
+            // Check if the directory is a child of an already-included directory
             var isChild = false;
             var i = 0;
             while( !isChild && i < $scope.directories.length){

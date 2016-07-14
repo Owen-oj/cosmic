@@ -1,19 +1,33 @@
-<ion-view view-title="Playlists" class="rubyonic-pane playlists" >
+<ion-view view-title="Playlists" hide-nav-bar="false" class="rubyonic-pane playlists" >
+
+    <ion-header-bar align-title="center" class="bar bar-ruby-header bar-transparent" ng-controller="NavigationCtrl">
+        <div class="buttons">
+            <button class="button button-clear brand-base-text-color" ng-click="goBackAStep()">
+                <i class="icon ion-ios-arrow-left"></i>
+            </button>
+        </div>
+        <h1 class="title">
+            Now Playing
+        </h1>
+        <div class="buttons">
+            <button class="button ruby-button-clear icon ion-ios-list-outline brand-base-text-color" menu-toggle="right"></button>
+        </div>
+    </ion-header-bar>
 
     <ion-content scroll="false">
 
         <div class="special-playlists">
             <div class="special-playlist-box box-top box-left">
-                <a href="#/tab/playlists/special/0/{{specialPlaylists[0].name}}" artwork-mosaic title="{{specialPlaylists[0].name}}" songs="specialPlaylists[0].titles"></a>
+                <a ui-sref="app.playlist-special/0/({PlaylistName: specialPlaylists[0].name})" artwork-mosaic title="{{specialPlaylists[0].name}}" songs="specialPlaylists[0].titles"></a>
             </div>
             <div class="special-playlist-box box-top box-right">
-                <a href="#/tab/playlists/special/1/{{specialPlaylists[1].name}}" artwork-mosaic title="{{specialPlaylists[1].name}}" songs="specialPlaylists[1].titles"></a>
+                <a ui-sref="app.playlist-special/1/({PlaylistName: specialPlaylists[1].name})" artwork-mosaic title="{{specialPlaylists[1].name}}" songs="specialPlaylists[1].titles"></a>
             </div>
             <div class="special-playlist-box box-bottom box-left">
-                <a href="#/tab/playlists/special/2/{{specialPlaylists[2].name}}" artwork-mosaic title="{{specialPlaylists[2].name}}" songs="specialPlaylists[2].titles"></a>
+                <a ui-sref="app.playlist-special/2/({PlaylistName: specialPlaylists[2].name})" artwork-mosaic title="{{specialPlaylists[2].name}}" songs="specialPlaylists[2].titles"></a>
             </div>
             <div class="special-playlist-box box-bottom box-right">
-                <a href="#/tab/playlists/special/3/{{specialPlaylists[3].name}}" artwork-mosaic title="{{specialPlaylists[3].name}}" songs="specialPlaylists[3].titles"></a>
+                <a ui-sref="app.playlist-special/3/({PlaylistName: specialPlaylists[3].name})" artwork-mosaic title="{{specialPlaylists[3].name}}" songs="specialPlaylists[3].titles"></a>
             </div>
         </div>
 
@@ -24,7 +38,7 @@
                 <ion-scroll class="user-playlists-scroll" has-bouncing="true">
                     <div class="list" >
 
-                        <a ng-repeat="playlist in playlists track by playlist.id" class="item item-thumbnail-left item-button-right" ng-href="#/tab/playlists/user/{{playlist.id}}/{{playlist.name}}">
+                        <a ng-repeat="playlist in playlists track by playlist.id" class="item item-thumbnail-left item-button-right" ui-sref="app.playlist-items/({playlistId: playlist.id})/({playlistName: playlist.name})">
                             <div class="item-image" >
                                 <img ng-src="{{miniaturesPath}}{{playlist.artworks[0]}}" class="miniature top-left">
                                 <img ng-src="{{miniaturesPath}}{{playlist.artworks[1]}}" class="miniature top-right">
