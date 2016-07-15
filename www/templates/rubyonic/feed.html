@@ -1,0 +1,243 @@
+<!-- Feed Screen - Refer to feed.scss -->
+<ion-view view-title="Home-Feed" hide-nav-bar="true" class="rubyonic-pane m-bg feed-screen">
+  <!-- Custom Header:
+  We did this so we could have a custom bar without
+  altering ionic's state/history management.
+  Use with 'hide-nav-bar="true"' attribute at line 1: -->
+  <div class="bar bar-ruby-header bar-transparent" ng-controller="NavigationCtrl">
+    <button class="button ruby-button-clear icon ion-navicon brand-base-text-color" menu-toggle="left">
+    	<span class="new-notification-bubble"></span>
+    </button>
+    <h1 class="title brand-base-text-color"></h1>
+    <button class="button ruby-button-clear icon ion-ios-search brand-base-text-color" ng-click="go('app.search')"></button>
+  </div>
+  <!-- End Custom navbar -->
+  <ion-content class="has-header">
+
+      <div id="home" class="padding feed ruby">
+		<div class="feed-item feed-item-small">
+
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active" style="padding: 0px;">
+                  <img src="img/carousel.png" alt="...">
+                  <div class="carousel-caption">
+
+                  </div>
+                </div>
+                <div class="item" style="padding: 0px;">
+                      <img src="img/carousel.png" alt="...">
+                      <div class="carousel-caption">
+
+                      </div>
+                </div>
+                <div class="item" style="padding: 0px;">
+                      <img src="img/carousel.png" alt="...">
+                      <div class="carousel-caption">
+
+                      </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="icon-prev glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="icon-next glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+<!--		<div class="feed-media">
+			<img src="img/demo/berry.jpg" class="feed-image">
+			<div class="feed-gradient-overlay"></div>
+			<h4 class="feed-title text-center">o o o</h4>
+		</div>
+
+		<div class="feed-item-details">
+			<div class="feed-stat brand-base-text-color">4 Comments</div> <div class="feed-stat brand-base-text-color">300 Likes</div>
+		</div>
+-->
+	</div>
+
+
+
+
+	<div class="feed-item">
+
+        <p class="list-header">Exclusives<a href="#"><span class="item-note" ng-controller="PlaylistItemsCtrl">
+          <button class="button-clear">See all <i class="icon ion-chevron-right"></i></button>
+        </span></a>
+        </p>
+        <ion-refresher ng-hide="noData || incomplete" on-refresh="doRefresh('2')"></ion-refresher>
+        <div class="list">
+            <div class="item item-song two-lines" collection-repeat="title in playlist" ng-click="playTitle(title)">
+
+                <img  ng-src="{{miniaturesPath}}{{title.artwork}}" />
+                <h2>{{title.name}}</h2>
+                <p>{{title.artist}}</p>
+
+                <button class="button button-icon ion-more" ng-click="showPopover($event,title)"></button>
+
+            </div>
+        </div>
+
+    </div>
+
+		  <div id="recommended" class="feed-item">
+              <p class="list-header">Weekly Mixes<a href="#"><span class="item-note">
+              <button class="button-clear">See all <i class="icon ion-chevron-right"></i></button>
+            </span></a></p>
+
+              <div class="recommended-feed row">
+                  <div class="col" style="
+    margin-left: 30px;
+">
+                    <div class="card">
+                      <div class="">
+                        <img src="img/mix1.jpg" class="img-responsive" style="padding: 0px">
+                      </div>
+                      <div class="item-divider">
+                        Inspirational Mix
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card">
+                      <div class="">
+                        <img src="img/mix2.jpg" class="img-responsive" style="padding: 0px">
+                      </div>
+                      <div class="item-divider">
+                        Party Mix
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+
+
+
+
+            <div class="feed-item">
+                <p class="list-header">Top Picks<a href="#"><span class="item-note">
+              <button class="button-clear">See all <i class="icon ion-chevron-right"></i></button>
+            </span></a></p>
+                <div class="list row">
+                    <div class="art col-xs-6 col-sm-3" ng-controller="NavigationCtrl" ng-click="go('app.player')">
+                        <img src="img/Timaya-Flavour-Money-Art.jpg" width="50px" height="55px"  class="artwork pull-left img-responsive">
+                        <span class="title"><strong>M.O.N.E.Y</strong></span><br>
+                        <span class="">Timaya ft. Flavour</span><br>
+                    </div>
+                    <div class="col-xs-6 col-md-2">
+                        <span class="object-selection more">
+                        <a href="#" class="pull-right button button-clear" ng-controller="AppCtrl" ng-click="showActionsheet()"><!--img src="img/more.png" class="icon pull-right"--><i class="icon ion-more"></i></a></span>
+                    </div>
+                </div>
+                <div class="list row">
+                    <div class="art col-xs-6 col-sm-3" ng-controller="NavigationCtrl" ng-click="go('app.player')">
+                        <img src="img/Jesse-Jagz.jpg" width="50px" height="55px"  class="artwork pull-left img-responsive">
+                        <span class="title"><strong>Reputation</strong></span><br>
+                        <span class="">Jesse Jagz</span><br>
+                    </div>
+                    <div class="col-xs-6 col-md-2">
+                        <span class="object-selection more">
+                        <a href="#" class="pull-right button button-clear" ng-controller="AppCtrl" ng-click="showActionsheet()"><!--img src="img/more.png" class="icon pull-right"--><i class="icon ion-more"></i></a></span>
+                    </div>
+                </div>
+                <div class="list row">
+                    <div class="art col-xs-6 col-sm-3" ng-controller="NavigationCtrl" ng-click="go('app.player')">
+                        <img src="img/lil-kesh.jpg" width="50px" height="55px"  class="artwork pull-left img-responsive">
+                        <span class="title"><strong>Shoki</strong></span><br>
+                        <span class="">Lil Kesh</span><br>
+                    </div>
+                    <div class="col-xs-6 col-md-2">
+                        <span class="object-selection more">
+                        <a href="#" class="pull-right button button-clear" ng-controller="AppCtrl" ng-click="showActionsheet()"><!--img src="img/more.png" class="icon pull-right"--><i class="icon ion-more"></i></a></span>
+
+                    </div>
+                </div>
+                <div class="list row">
+                    <div class="art col-xs-6 col-sm-3" ng-controller="NavigationCtrl" ng-click="go('app.player')">
+                        <img src="img/ycee.jpg" width="50px" height="55px"  class="artwork pull-left img-responsive">
+                        <span class="title"><strong>Jagaban</strong></span><br>
+                        <span class="">YCEE</span><br>
+                    </div>
+                    <div class="col-xs-6 col-md-2">
+                        <span class="object-selection more">
+                        <a href="#" class="pull-right button button-clear" ng-controller="AppCtrl" ng-click="showActionsheet()"><!--img src="img/more.png" class="icon pull-right"--><i class="icon ion-more"></i></a></span>
+                    </div>
+                </div>
+	       </div>
+
+
+
+			  <div class="feed-item">
+              <p class="list-header">
+					Weekly Mixes
+					<a href="#">
+						<span class="item-note">
+							<button class="button-clear"><i class="icon ion-chevron-right"></i></button>
+						</span>
+					</a>
+			  </p>
+			  <p class="list-header">
+					Genres
+					<a href="#">
+						<span class="item-note">
+							<button class="button-clear"><i class="icon ion-chevron-right"></i></button>
+						</span>
+					</a>
+			  </p>
+		  </div>
+
+
+
+		  <div class="panel panel-primary">
+                <div class="panel-heading">
+                <h3 class="panel-title">Recommended<a href="#"><span class="item-note">
+                      <button class="button-clear">See all <i class="icon ion-chevron-right"></i></button>
+                    </span></a></h3>
+                </div>
+                <div class="panel-body ">
+
+<!--
+					<ion-scroll zooming="false" direction="x" style="width: 350px; height: 100px"-->
+						<div class="row" style="
+    margin-left: 0px">
+
+							<div class="col">
+								<a href="#" >
+									<img src="img/Timaya-Flavour-Money-Art.jpg" class="artwork img-responsive">
+								</a>
+							</div>
+							<div class="col">
+								<a href="#" >
+									<img src="img/Mero-Emujo-ft.-Olamide-ART.jpg" class="artwork img-responsive">
+								</a>
+							</div>
+							<div class="col">
+								<a href="#" >
+									<img src="img/lil-kesh.jpg" class="artwork img-responsive">
+								</a>
+							</div>
+						</div>
+<!--					</ion-scroll>-->
+				</div>
+			</div>
+
+      </div>
+
+</div>
+    </ion-content>
+        <play-bar ></play-bar>
+    </ion-view>

@@ -15,11 +15,11 @@
             My Library
         </h1>
         <div class="buttons">
-            <button class="button ruby-button-clear icon ion-ios-search brand-base-text-color" ng-controller="NavigationCtrl" ng-click="go('app.search')"></button>
+            <button class="button ruby-button-clear icon ion-ios-search brand-base-text-color" ng-click="go('app.search')"></button>
         </div>
     </ion-header-bar>
 
-    <ion-content class="has-header">
+    <ion-content class="has-header" ng-controller="ArtistsCtrl">
 
         <div class="player-background">
             <div class="player-overlay">
@@ -28,7 +28,7 @@
 
             <ion-list>
 
-                <ion-item ng-repeat="album in albums" class="item-thumbnail-left" href="#app/albums/{{album.id}}">
+                <ion-item ng-repeat="album in albums" class="item-thumbnail-left" ui-sref="app.albums({albumId: album.id})">
                     <img ng-src="data/artwork/{{album.id}}.jpg">
                     <h2>{{album.name}}</h2>
                     <!--<p><b>{{album.nb_titles}}</b> songs, {{album.duration}}</p>-->

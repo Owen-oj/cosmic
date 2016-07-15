@@ -229,7 +229,7 @@ $play-bar-next-font-size     : 30px;
 
 play-bar{
       position     : absolute;
-      bottom       : $tabs-height;
+      bottom       : 0;
       height       : $play-bar-height;
       z-index      : 10;
       display      : table;

@@ -10742,7 +10742,7 @@ td-card.ruby-tindercard.tinder-style-four {
 
 play-bar {
   position: absolute;
-  bottom: 49px;
+  bottom: 0;
   height: 50px;
   z-index: 10;
   display: table;

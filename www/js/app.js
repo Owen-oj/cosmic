@@ -137,15 +137,6 @@ angular.module('cosmic', ['ionic', 'ngCordova', 'cosmic.controllers', 'cosmic.se
         //     }
         // })
 
-        .state('app.playlists', {
-            url: "/playlists",
-            controller: 'PlaylistsCtrl',
-            views: {
-                'menuContent': {
-                    templateUrl: "templates/rubyonic/playlists.html"
-                }
-            }
-        })
 
         .state('app.trending', {
             url: "/trending",
@@ -259,12 +250,22 @@ angular.module('cosmic', ['ionic', 'ngCordova', 'cosmic.controllers', 'cosmic.se
 	// 	}
 	// })
 
+	.state('app.playlists', {
+        url: "/playlists",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/rubyonic/playlists.html",
+                controller: 'PlaylistsCtrl'
+            }
+        }
+      })
+
 	.state('app.playlist-items', {
 		url: '/playlists/user/:playlistId/:playlistName',
-        controller: 'PlaylistItemsCtrl',
 		views: {
             'menuContent': {
-                templateUrl: 'templates/rubyonic/playlist-items.html'
+                templateUrl: 'templates/rubyonic/playlist-items.html',
+                controller: 'PlaylistItemsCtrl'
             }
 		}
 	})
@@ -281,20 +282,20 @@ angular.module('cosmic', ['ionic', 'ngCordova', 'cosmic.controllers', 'cosmic.se
 
 	.state('app.artists', {
 		url: '/artists',
-        controller: 'ArtistsCtrl',
 		views: {
 			'menuContent': {
-				templateUrl: 'templates/rubyonic/artists.html'
+				templateUrl: 'templates/rubyonic/artists.html',
+                controller: 'ArtistsCtrl'
 			}
 		}
 	})
 
 	.state('app.titles', {
 		url: '/artists/:artistId',
-        controller: 'TitlesCtrl',
 		views: {
 			'menuContent': {
-				templateUrl: 'templates/titles.html'
+				templateUrl: 'templates/titles.html',
+                    controller: 'TitlesCtrl'
 			}
 		}
 	})

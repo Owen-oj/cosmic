@@ -1,0 +1,56 @@
+
+<ion-view view-title="Search" hide-nav-bar="true" class="rubyonic-pane">
+<!-- player Screen - Refer to player.scss -->
+  <!--
+  setting 'hide-nav-bar="true"' above enables us to create our own header bar
+  by hiding the default one without messing with ionic's state/history management
+  -->
+
+<ion-header-bar align-title="center" class="bar bar-ruby-header bar-transparent">
+    <div class="buttons">
+         <button class="button button-clear brand-base-text-color" ng-click="goBackAStep()">
+            <i class="icon ion-ios-arrow-left"></i>
+        </button>
+    </div>
+    <div id="search" class="form-rb">
+        <div class="item-input-inset">
+            <label class="item item-input item-input-wrapper">
+                <form ng-submit="hideKeyboard()">
+                    <input type="search" id="search-input" class="text-color-contrast" placeholder="Enter Song, Album, Artist or Genre" ng-model="search">
+                </form>
+            </label>
+            <button class="button button-clear" ng-click="cancel()">
+                Cancel
+            </button>
+        </div>
+    </div>
+</ion-header-bar>
+
+  <ion-content has-bouncing="true" class="has-header">
+
+      <div class="player-background">
+        <div class="player-overlay"></div>
+            <div id="search" class="content">
+                <!--->
+                <div class="list">
+                    <div class="item item-song two-lines" collection-repeat="title in titles" ng-click="playTitle(title)">
+
+                        <img  ng-src="{{miniaturesPath}}{{title.artwork}}" />
+                        <h2>{{title.name}}</h2>
+                        <p>{{title.artist}}</p>
+
+                        <button class="button button-icon ion-more" ng-click="showPopover($event,title)"></button>
+
+                    </div>
+                </div>
+            </div>
+      </div>
+
+  </ion-content>
+        <play-bar></play-bar>
+</ion-view>
+
+
+
+
+

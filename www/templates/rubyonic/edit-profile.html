@@ -1,0 +1,85 @@
+<!-- Profile Screen - Refer to profile.scss -->
+<ion-view view-title="Edit Profile" hide-nav-bar="true" class="rubyonic-pane profile-screen">
+  <!--
+  setting 'hide-nav-bar="true"' above enables us to create our own header bar
+  by hiding the default one without messing with ionic's state/history management
+  -->
+
+<ion-header-bar align-title="center" class="bar profile-bar" ng-controller="NavigationCtrl">
+  <div class="buttons">
+    <button class="button button-clear brand-base-text-color" ng-click="goBackAStep()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+  </div>
+  <h1 class="title">
+    Edit Profile
+  </h1>
+  <div class="buttons">
+    <button class="button button-clear">save
+      <i class="icon ion-ios-checkmark-empty"></i>
+    </button>
+  </div>
+</ion-header-bar>
+
+  <ion-content>
+
+      <div id="p-edit" class="profile-background">
+        <div class="profile-overlay"></div>
+        <img class="profile-wallpaper" src="img/demo/abc-95.jpg" alt="">
+
+        <div class="profile-details padding">
+			<button class="button button-clear profile-bg-edit">
+			  <i class="icon ion-camera brand-base-text-color" alt="" title="">&nbsp;Change Background Image</i>
+			</button>
+          <div class="profile-actions" ng-controller="NavigationCtrl"> 
+            <button class="button button-clear profile-img-edit">
+              <i class="icon ion-camera brand-base-text-color" alt="change profile picture" title="Change profile picture">&nbsp;Change Profile Image</i>
+            </button>
+          </div>
+          <div class="row responsive-sm">
+            <div class="col">
+              <img class="profile-thumb" src="img/demo/profile-image.jpg" alt="">
+              <label class="brand-base-text-color profile-name-title item-input"><input type="text" placeholder="Steeve Jazz" style="color: white;
+    font-size: 30px;"/></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Profile Feed -->
+      <div class="">
+        <div class="">
+             <div id="p-edit" class="content padding">
+				 <div class="content-title">Personal Information</div>
+				 <div class="">
+					 <label class="brand-base-text-color item-input"><input type="text" placeholder="First Name" style="color: white;"/></label>
+					 <label class="brand-base-text-color item-input"><input type="text" placeholder="Last Name" style="color: white;"/></label>
+					 <label class="brand-base-text-color item-input"><input type="email" placeholder="steeve.jazz@gmail.ca" style="color: white;"/></label>
+					 <label class="brand-base-text-color item-input"><input type="email" placeholder="+23408055938443" style="color: white;"/></label>
+				 </div>
+                <div class="list">
+                    <div class="list-item">
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+								<i class="icon ion-navigation"></i>
+                              Location
+                            </div>
+                            <select class="button-clear">
+                              <option>Abuja</option>
+                              <option>Benin</option>
+                              <option selected>Lagos</option>
+                                <option>Port-Hacourt</option>
+                                <option>Kaduna</option>
+                            </select>
+                      </label>
+                    </div>
+                </div>
+                <p class="content-title"><i class="icon ion-ios-locked pull-left padding-right"></i>Change Password <button class="button-clear pull-right"><i class="icon ion-chevron-right"></i></button></p>   
+			</div>
+        </div>
+      </div>
+      <!-- End Profile Feed -->
+  </ion-content>
+    <play-bar></play-bar>
+</ion-view>

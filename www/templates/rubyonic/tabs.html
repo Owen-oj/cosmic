@@ -1,0 +1,63 @@
+<!-- player Screen - Refer to player.scss -->
+<ion-view view-title="Tracks" hide-nav-bar="true" class="rubyonic-pane">
+  <!--
+  setting 'hide-nav-bar="true"' above enables us to create our own header bar
+  by hiding the default one without messing with ionic's state/history management
+  -->
+
+<ion-header-bar align-title="center" class="bar bar-ruby-header bar-transparent" ng-controller="NavigationCtrl">
+  <div class="buttons">
+    <button class="button ruby-button-clear icon ion-navicon brand-base-text-color" menu-toggle="left">
+      <span class="new-notification-bubble"></span>
+    </button>
+  </div>
+  <h1 class="title">
+    My Library
+  </h1>
+  <div class="buttons">
+      <button class="button ruby-button-clear icon ion-ios-list-outline brand-base-text-color" menu-toggle="right"></button>
+  </div>
+</ion-header-bar>
+
+  <ion-content class="">
+
+	<!--ion-tabs class="tabs-icon-bottom has-header">
+
+
+	 <-- Dashboard Tab --
+	 <ion-tab title="Dashboard" icon="icon ion-home" href="#/tab/dash">
+	 <ion-nav-view name="tab-dash"></ion-nav-view>
+	 </ion-tab>
+
+
+	 <!-- Friends Tab --
+	 <ion-tab title="Friends" icon="icon ion-heart" href="#/tab/friends">
+	 <ion-nav-view name="tab-friends"></ion-nav-view>
+	 </ion-tab>
+
+
+	 <!-- Account Tab --
+	 <ion-tab title="Account" icon="icon ion-gear-b" href="#/tab/account">
+	 <ion-nav-view name="tab-account"></ion-nav-view>
+	 </ion-tab>
+
+
+	</ion-tabs-->
+
+	</ion-content>
+
+	<ion-footer-bar class="bar-footer">
+
+        <div class="art pull-left" ng-controller="NavigationCtrl" ng-click="go('app.player')">
+                    <a href="player.html"><img src="img/lil-kesh.jpg" width="40px" height="45px" class="artwork img-responsive"></a>
+                </div>
+                <div class="track-details" ng-controller="NavigationCtrl" ng-click="go('app.player')">
+                    <span class=""><strong>Shoki</strong></span><br>
+                    <span class="">Lil Kesh</span><br>
+
+                </div>
+        <button class="button button-clear pull-right"><i class="icon ion-play"></i></button>
+      </ion-footer-bar>
+
+</ion-view>
+

@@ -1,0 +1,93 @@
+<!-- player Screen - Refer to player.scss -->
+<ion-view view-title="Settings" hide-nav-bar="true" class="rubyonic-pane tracks-player">
+  <!-- 
+  setting 'hide-nav-bar="true"' above enables us to create our own header bar
+  by hiding the default one without messing with ionic's state/history management
+  -->
+
+<ion-header-bar align-title="center" class="bar bar-ruby-header bar-transparent" ng-controller="NavigationCtrl">
+  <div class="buttons">
+    <button class="button button-clear brand-base-text-color" ng-click="goBackAStep()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+  </div>
+  <h1 class="title">
+    My Subscriptions
+  </h1>
+  <div class="buttons">
+      <button class="button ruby-button-clear icon ion-ios-list-outline brand-base-text-color" menu-toggle="right"></button>
+  </div>
+</ion-header-bar>
+
+  <ion-content class="has-header">
+    
+      <div class="player-background">
+        <div class="player-overlay"></div>
+          
+          <!-- <div class="list list-inset form-rb ">
+	  <label class="item item-input">
+	    <i class="icon ion-search placeholder-icon"></i>
+	    <input type="text" class="text-color-contrast" placeholder="Enter Song, Album, Artist or Genre">
+	  </label>
+	</div> -->
+            <div id="settings" class="content">
+              <p class="content-title"> Your active subscriptions</p>
+                <div class="list">
+                    <div class="list-item">
+                        <a class="item" href="#">
+<!--                        <i class="icon ion-mic-a"></i>-->
+                        Subscribed
+                        <span class="item-note">
+                          You have no active subscriptions
+                        </span>
+                        </a>
+                    </div>
+                </div>
+<!--
+                <p class="content-title"> General Settings</p>
+                <div class="list">
+                    <div class="list-item">
+                        <span class="item item-toggle">
+                         <div class="input-label">
+							 Notifications
+							 </div>
+                         <label class="toggle toggle-positive">
+                           <input type="checkbox">
+                           <div class="track">
+                             <div class="handle"></div>
+                           </div>
+                         </label>
+                      </span>
+                    </div>
+                    <div class="list-item">
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                              Sleep Timer
+                            </div>
+                            <select>
+                              <option>10 mins</option>
+                              <option selected>20 mins</option>
+                              <option>30 mins</option>
+                                <option>1 hour</option>
+                                <option>2 hours</option>
+                            </select>
+                      </label>
+                    </div>
+                    <div class="list-item">
+                        <a class="item item-icon-right" href="#">
+                        <i class="icon ion-mic-a"></i>
+                        SNS Auto Sharing
+                            <i class="icon ion-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+-->
+                
+            </div>
+      </div>
+
+
+
+  </ion-content>
+        <play-bar></play-bar>
+    </ion-view>

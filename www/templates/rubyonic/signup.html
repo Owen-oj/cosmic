@@ -1,0 +1,76 @@
+<!-- Login Screen - refer to login.scss -->
+<ion-view view-title="Sign Up" hide-nav-bar="true" >
+
+
+
+  <ion-content class="rubyonic-pane login-screen" drag-content="false">
+
+  	<!-- Logo Section - center aligned by default -->
+  	<div class="logo">
+  		<img src="img/mcomm-music-logo.png" alt="">
+	</div>
+	<!-- End Logo Section -->
+
+	<!-- A description section. Useful for a short pitch -->
+  	<!-- <h4 class="description">A high-status theme pack for your next Ionic Project</h4> -->
+  	<!-- End description -->
+<form name="Login" novalidate>
+  	<!-- Login Form - note the modifier 'is-transparent' is for the form to be see through class="list"-->
+  	<div class=" list-inset login-form is-transparent padding">
+
+	  <label class="item item-input">
+	  	<i class="icon ion-person placeholder-icon"></i>
+	    <input type="email" placeholder="Email" ng-model="user.email_address" name="email_address"
+             ng-pattern='/^(")?(?:[^\."])(?:(?:[\.])?(?:[\w\-!#$%&*+\/=?\^_`{|}~]))*\1@(\w[\-\w]*\.){1,5}([A-Za-z]){2,6}$/'
+             required>
+	  </label>
+		<label class="item item-input">
+	  	<i class="icon ion-ios-telephone placeholder-icon"></i>
+	    <input type="password" placeholder="Phone Number" ng-model="user.phone" name="phone" required>
+	  </label>
+	  <label class="item item-input">
+	  	<i class="icon ion-locked placeholder-icon"></i>
+	    <input type="password" placeholder="Password" ng-model="user.password" name="password" required>
+	  </label>
+		      
+		<label class="checkbox" style="left: 30px">
+	      <input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;
+			  I agree to <a href="#">Terms &amp; Conditions</a>
+		</label>
+		      
+		   
+		
+      <div class="signup-warnings">
+        <span class="validation" ng-show="Login.email_address.$error.required
+        && Login.email_address.$dirty && Login.email_address.$touched ">* Username is required</span>
+        <span  class="validation" ng-show="Login.email_address.$error.pattern &&
+        !Login.email_address.$pristine && Login.email_address.$touched">* Username must be an email address</span>
+        <span class="validation" ng-show="Login.password.$error.required && Login.password.$touched">* Password is required</span>
+       <!-- <p ng-show="Login.password.$error.minlength ">* Password must be longer than 6 characters</p> -->
+      </div>
+
+	  <div class="button-stack" ng-controller="NavigationCtrl">
+	  	<button ng-click="validateUser()" class="button button-positive button-block" ng-disabled="Login.$invalid">Sign Up</button>
+	  	<button ng-click="go('app.login')" class="button button-stable button-block">Login</button>
+	  	<button ng-click="go('app.forgot')" class="button button-transparent button-block">Forgot Password?</button>
+	  </div>
+
+	</div>
+	<!-- End Login Form-->
+</form>
+	<!-- Social Login --
+	<div class="social-login">
+		<h6 class="divider">Social Login</h6>
+		<div class="row">
+			<div class="col">
+				<a href="" class="button button-assertive button-borderless button-block no-margin"><i class="ion-social-google"></i> Gmail</a>
+			</div>
+			<div class="col">
+				<a href="" class="button button-positive button-borderless button-block no-margin"><i class="ion-social-facebook"></i> Facebook</a>
+			</div>
+		</div>
+	</div>
+	<-- End Social Login -->
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,53 @@
+
+<!-- player Screen - Refer to player.scss -->
+<ion-view view-title="Tracks" hide-nav-bar="true" class="rubyonic-pane tracks-player">
+  <!--
+  setting 'hide-nav-bar="true"' above enables us to create our own header bar
+  by hiding the default one without messing with ionic's state/history management
+  -->
+
+<ion-header-bar align-title="center" class="bar bar-ruby-header bar-transparent" ng-controller="NavigationCtrl">
+  <div class="buttons">
+    <button class="button button-clear brand-base-text-color" ng-click="goBackAStep()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+  </div>
+  <h1 class="title">
+    Songs
+  </h1>
+  <div class="buttons">
+      <button class="button ruby-button-clear icon ion-ios-search brand-base-text-color" ng-click="go('app.search')"></button>
+  </div>
+</ion-header-bar>
+
+  <ion-content class="has-header">
+
+      <div class="player-background">
+        <div class="player-overlay">
+            <div class="feed-item">
+                <div class="list">
+                    <div collection-repeat="title in titles" item-height="title.isSeparator ? 37 : 59">
+                        <div ng-if="!title.isSeparator" class="item item-song one-line" ng-click="playTitle(title)">
+
+                            <img  ng-if="title.first" ng-src="{{::miniaturesPath}}{{title.artwork}}" />
+                            <h2>{{title.name}}</h2>
+
+                            <button class="button button-icon ion-more" ng-click="showPopover($event,title)"></button>
+
+                        </div>
+
+                        <div ng-if="title.isSeparator" class="item item-divider album-header">
+                            {{title.name}}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </ion-content>
+
+    <play-bar></play-bar>
+
+</ion-view>
+

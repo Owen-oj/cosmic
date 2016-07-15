@@ -1,0 +1,47 @@
+<!-- Login Screen - refer to login.scss -->
+<ion-view view-title="Forgot Password - Success" hide-nav-bar="true">
+  <ion-content class="rubyonic-pane login-screen">
+
+  	<!-- Logo Section - center aligned by default -->
+  	<div class="logo">
+<!--  		<img src="img/mcomm-music-logo.png" alt="">-->
+	</div>
+	<!-- End Logo Section -->
+
+	<!-- A description section. Useful for a short pitch -->
+  	 <h4 class="description">Success!</h4> 
+  	<!-- End description -->
+
+  	<!-- Login Form - note the modifier 'is-transparent' is for the form to be see through class="list"-->
+
+  	<div class=" list-inset login-form is-transparent">
+        <p>A password reset link has been sent to the email you provided.</p>
+	  <!--<label class="item item-input">
+	  	<i class="icon ion-person placeholder-icon"></i>
+	    <input type="url" placeholder="Email" required>
+	  </label>
+-->
+
+	  <div class="button-stack" ng-controller="NavigationCtrl">
+	  	<button ng-click="go('app.feed')" class="button button-transparent button-block">Sign in</button>
+	  </div>
+
+	</div>
+	<!-- End Login Form-->
+
+	<!-- Social Login --
+	<div class="social-login">
+		<h6 class="divider">Social Login</h6>
+		<div class="row">
+			<div class="col">
+				<a href="" class="button button-assertive button-borderless button-block no-margin"><i class="ion-social-google"></i> Gmail</a>
+			</div>
+			<div class="col">
+				<a href="" class="button button-positive button-borderless button-block no-margin"><i class="ion-social-facebook"></i> Facebook</a>
+			</div>
+		</div>
+	</div>
+	<-- End Social Login -->
+
+  </ion-content>
+</ion-view>

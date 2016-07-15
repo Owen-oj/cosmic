@@ -1,0 +1,115 @@
+<!-- player Screen - Refer to player.scss -->
+<ion-view view-title="Tracks" hide-nav-bar="true" class="rubyonic-pane tracks-player" ng-controller="NavigationCtrl">
+  <!--
+  setting 'hide-nav-bar="true"' above enables us to create our own header bar
+  by hiding the default one without messing with ionic's state/history management
+  -->
+
+<ion-header-bar align-title="center" class="bar bar-ruby-header bar-transparent">
+  <div class="buttons">
+    <button class="button ruby-button-clear icon ion-navicon brand-base-text-color" menu-toggle="left">
+      <span class="new-notification-bubble"></span>
+    </button>
+  </div>
+  <h1 class="title">
+    My Library
+  </h1>
+  <div class="buttons">
+      <button class="button ruby-button-clear icon ion-ios-search brand-base-text-color" ng-click="go('app.search')"></button>
+  </div>
+</ion-header-bar>
+
+  <ion-content class="has-header">
+
+      <div class="player-background">
+        <div class="player-overlay">
+
+          </div>
+
+
+          </div>
+
+
+    <div class="list">
+
+        <div class="list-item">
+            <a class="item item-icon-left" ng-click="go('app.songs')">
+             <i class="icon ion-ios-musical-note"></i>
+            All songs
+            <span class="item-note">
+              381
+            </span>
+            </a>
+        </div>
+        <div class="list-item">
+            <a class="item item-icon-left" href="#">
+             <i class="icon ion-ios-cloud-download"></i>
+            Offline Streaming
+            </a>
+        </div>
+        <div class="list-item">
+            <a class="item item-icon-left" ng-click="go('app.playlists')">
+             <i class="icon ion-folder"></i>
+            My Playlists
+            <span class="item-note">
+              21
+            </span>
+            </a>
+        </div>
+
+      </div>
+      <div class="list" ng-controller="PlaylistsCtrl">
+
+        <div class="list-item">
+            <a class="item item-icon-left" href="#">
+             <i class="icon ion-heart"></i>
+            My Favourite Songs
+            </a>
+        </div>
+        <div class="list-item">
+            <a class="item item-icon-left" ng-click="newPlaylist();">
+             <i class="icon ion-plus-circled"></i>
+            Add New Playlist
+
+            </a>
+        </div>
+
+      </div>
+
+      <div class="list">
+
+        <div class="list-item">
+            <a class="item item-icon-left" ng-click="go('app.artists')">
+             <i class="icon ion-mic-c"></i>
+            Artists
+            </a>
+        </div>
+        <div class="list-item">
+          <a class="item item-icon-left" ui-sref="app.artists({artistId: artist.id})">
+              <i class="icon ion-ios-albums"></i>
+              Albums
+          </a>
+        </div>
+
+      </div>
+
+      <div class="list">
+
+        <div class="list-item">
+            <a class="item item-icon-left" href="#">
+             <i class="icon ion-bag"></i>
+            My Purchases
+            </a>
+        </div>
+        <div class="list-item">
+            <a class="item item-icon-left" href="#">
+             <i class="icon ion-ribbon-b"></i>
+            My Gifts
+            </a>
+        </div>
+
+      </div>
+    </ion-content>
+        <play-bar></play-bar>
+    </ion-view>
+

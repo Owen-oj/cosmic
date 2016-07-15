@@ -1,0 +1,128 @@
+<!-- player Screen - Refer to player.scss -->
+<ion-view view-title="Player" hide-nav-bar="true" class="rubyonic-pane player-screen" ng-controller="MusicCtrl">
+  <!--
+  setting 'hide-nav-bar="true"' above enables us to create our own header bar
+  by hiding the default one without messing with ionic's state/history management
+  -->
+
+<ion-header-bar align-title="center" class="bar bar-ruby-header bar-transparent" ng-controller="NavigationCtrl">
+  <div class="buttons">
+    <button class="button button-clear brand-base-text-color" ng-click="goBackAStep()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+  </div>
+  <h1 class="title">
+    Now Playing
+  </h1>
+  <div class="buttons">
+      <button class="button ruby-button-clear icon ion-ios-list-outline brand-base-text-color" menu-toggle="right"></button>
+  </div>
+</ion-header-bar>
+
+  <ion-content class="has-header page-fill has-footer">
+
+      <div id="player-feed" class="item item-thumbnail-center">
+        <audio id="player"></audio>
+		  <div class="ng-binding text-center">
+			  <h2>{{SongName}}</h2>
+
+               <p>{{ArtistName}}</p>
+		  	<img src="{{Cover}}" class="artwork">
+
+		  </div>
+
+<!--		  <button class="button button-assertive" ng-click="playTrack(0)">Play Land of Confusion - Genesis</button>-->
+<!--        <button class="button button-assertive" ng-click="playTrack(1)">Play Tonight, Tonight - Genesis</button>-->
+
+
+      </div>
+
+
+
+
+      <!-- player Feed --
+      <div id="player-feed" class="row container-fluid">
+        <div class="col-xs-12 col-sm-6 text-center">
+         <p>Shoki</p>
+            <span class="text-muted">Lil Kesh</span>
+         <img src="img/lil-kesh.jpg" class="center-block img-responsive"/>
+
+
+        </div>
+      </div>
+      <-- End player Feed --
+      <div id="player-controls" class="row">
+        <div class="col col-15">
+            <a href="#" class="button button-clear"><img src="img/player_save-track.png" class="center-block  img-responsive"/></a>
+          </div>
+          <div class="col col-15">
+              <a href="#" class="button button-clear"><img src="img/player_track-shuffle.png" class="center-block  img-responsive"/></a>
+          </div>
+          <div class="col col-15">
+              <a href="#" class="button button-clear"><img src="img/player_track-add.png" class="center-block  img-responsive"/></a>
+          </div>
+          <div class="col col-15">
+              <a href="#" class="button button-clear"><img src="img/player_track-comments.png" class="center-block  img-responsive"/></a>
+          </div>
+      </div>
+
+      <div class="range">
+        <span>1:18</span>
+          <input type="range" name="volume">
+          <span>3:02</span>
+      </div>
+
+      <div id="playback-controls" class="row">
+        <div class="col">
+            <a href="#" class="button button-clear"><img src="img/player_thumbs-down.png" class="img-responsive"/></a>
+          </div>
+          <div class="col">
+              <a href="#" class="button button-clear"><img src="img/player_rewind.png" class="img-responsive"/></a>
+          </div>
+          <div class="col col-25">
+              <a href="#" class="button button-clear"><img src="img/player_play-button.png" class="img-responsive"/></a>
+          </div>
+          <div class="col">
+              <a href="#" class="button button-clear"><img src="img/player_foward.png" class="img-responsive"/></a>
+          </div>
+          <div class="col">
+              <a href="#" class="button button-clear"><img src="img/player_thumbs-up.png" class="img-responsive"/></a>
+          </div>
+      </div>
+-->
+
+
+
+  </ion-content>
+
+<ion-footer-bar align-title="left" class="bar footer-player">
+  <div class="player-overlay">
+		<ion-audio-track track="dynamicTrack" toggle-playback="togglePlayback">
+			<div id="player-controls">
+				<div >
+					<div class="track-options list">
+						<a class="button button-clear icon item"><i class="ion-share"></i></a>
+						<a class="button button-clear icon item"><i class="ion-ios-bell-outline"></i></a>
+						<a class="button button-clear icon item"><i class="ion-android-favorite"></i></a>
+						<a href="#" class="button button-clear item" ng-controller="AppCtrl" ng-click="showActionsheet()"><i class="ion-more"></i></a>
+					</div>
+					<div class="timer">
+						<ion-audio-progress-bar track="dynamicTrack" display-time></ion-audio-progress-bar>
+					</div>
+
+					<ion-audio-controls id="playback-controls" class="list">
+						<a class="button button-clear icon item"><i class="ion-ios-loop-strong"></i></a>
+						<a class="button button-clear icon item"><i class="ion-skip-backward" ng-click="previousSong()"></i></a>
+						<a class="button button-clear icon item" ion-audio-play ng-click="playerControl()" style="width: 28px;" ng-show="isPlaying"></a>
+            <a class="button button-clear icon item" ion-audio-pause ng-click="playerControl()" style="width: 28px;" ng-hide="isPlaying"></a>
+
+            <a class="button button-clear icon item" ion-audio-skip ng-click="nextSong()"><i class="ion-skip-forward"></i></a>
+						<a class="button button-clear icon item"><i class="ion-ios-shuffle-strong" ></i></a>
+					</ion-audio-controls>
+				</div>
+			</div>
+		</ion-audio-track>
+	  </div>
+</ion-footer-bar>
+
+</ion-view>

@@ -1,0 +1,127 @@
+<!-- Profile Screen - Refer to profile.scss -->
+<ion-view view-title="Profile" hide-nav-bar="true" class="rubyonic-pane profile-screen">
+  <!--
+  setting 'hide-nav-bar="true"' above enables us to create our own header bar
+  by hiding the default one without messing with ionic's state/history management
+  -->
+
+<ion-header-bar align-title="center" class="bar profile-bar" ng-controller="NavigationCtrl">
+  <div class="buttons">
+    <button class="button button-clear brand-base-text-color" ng-click="goBackAStep()">
+      <i class="icon ion-ios-arrow-left"></i>
+    </button>
+  </div>
+  <h1 class="title">
+    Profile
+  </h1>
+  <div class="buttons">
+    <button class="button button-clear" ng-click="go('app.settings')">
+      <i class="icon ion-ios-more"></i>
+    </button>
+  </div>
+</ion-header-bar>
+
+  <ion-content>
+
+      <div class="profile-background">
+        <div class="profile-overlay"></div>
+        <img class="profile-wallpaper" src="img/demo/abc-95.jpg" alt="">
+
+        <div class="profile-details padding">
+          <div class="profile-actions" ng-controller="NavigationCtrl">
+            <button ng-click="go('app.subscriptions')" class="button button-clear">
+              <i class="icon ion-ios-checkmark-outline brand-base-text-color" alt="Subscriptions" title="Subscriptions">&nbsp;Subscriptions</i>
+            </button>
+            <button ng-click="go('app.edit-profile')" class="button button-clear">
+              <i class="icon ion-compose brand-base-text-color"></i>
+            </button>
+          </div>
+          <div class="row responsive-sm">
+            <div class="col">
+              <img class="profile-thumb" src="img/demo/profile-image.jpg" alt="">
+              <h2 class="brand-base-text-color profile-name-title">Steeve Jazz</h2> 
+            </div>
+             <div class="col col-33  ">
+              <div class="padding">
+<!--
+				  <button class="button-clear">
+                <div class="profile-stats secondary-font"><i class="ion-card"></i> 500 Naira</div>
+				  </button>
+-->
+                <h5 class="brand-base-text-color"><i class="ion-navigate"></i> Lagos, Nigeria</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Profile Feed -->
+      <div class="">
+        <div class="">
+             <div id="profile-options" class="content">
+<!--
+				 <div class="content-title">Purchases</div>
+				 <div class="padding">
+				 	<div id=" " class="content row">
+						<span class="box box-bg col">
+
+						</span>
+
+
+						<span class="box box-bg col">
+
+						</span>
+					</div>
+				 </div>
+-->
+
+
+              <p class="content-title"><i class="icon ion-social-facebook pull-left padding-right"></i>Connect Facebook <button class="button-clear pull-right"><i class="icon ion-chevron-right"></i></button></p>
+
+<!--
+                <div class="list">
+                    <div class="list-item">
+                        <a class="item item-icon-right" href="#">
+                        <i class="icon ion-signal"></i>
+                        2G &frasl; 3G Mode
+                            <i class="icon ion-chevron-right"></i>
+                        </a>
+                    </div>
+                    <div class="list-item">
+                        <a class="item" href="#">
+                        <i class="icon ion-mic-a"></i>
+                        Streaming Quality
+                        <span class="item-note">
+                          Standard
+                        </span>
+                        </a>
+                    </div>
+                </div>
+-->
+                <p class="content-title"> <i class="icon ion-ribbon-a pull-left padding-right"></i>Points and Medals<button class="button-clear pull-right"><i class="icon ion-chevron-right"></i></button></p>
+                <div class="list">
+
+                </div>
+			</div>
+        </div>
+      </div>
+      <!-- End Profile Feed -->
+
+
+  </ion-content>
+
+	 <ion-footer-bar class="bar-footer">
+
+        <div class="art pull-left" ng-controller="NavigationCtrl" ng-click="go('app.player')">
+                    <a href="player.html"><img src="img/lil-kesh.jpg" width="40px" height="45px" class="artwork img-responsive"></a>
+                </div>
+                <div class="track-details" ng-controller="NavigationCtrl" ng-click="go('app.player')">
+                    <span class=""><strong>Shoki</strong></span><br>
+                    <span class="">Lil Kesh</span><br>
+
+                </div>
+        <button class="button button-clear pull-right"><i class="icon ion-play"></i></button>
+      </ion-footer-bar>
+
+</ion-view>
