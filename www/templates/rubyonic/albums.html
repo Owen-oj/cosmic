@@ -12,7 +12,7 @@
             </button>
         </div>
         <h1 class="title">
-            My Library
+            My Albums
         </h1>
         <div class="buttons">
             <button class="button ruby-button-clear icon ion-ios-search brand-base-text-color" ng-click="go('app.search')"></button>
@@ -31,7 +31,7 @@
                 <ion-item ng-repeat="album in albums" class="item-thumbnail-left" ui-sref="app.albums({albumId: album.id})">
                     <img ng-src="data/artwork/{{album.id}}.jpg">
                     <h2>{{album.name}}</h2>
-                    <!--<p><b>{{album.nb_titles}}</b> songs, {{album.duration}}</p>-->
+                    <p><b>{{album.nb_titles}}</b> songs, {{album.duration}}</p>
                 </ion-item>
 
             </ion-list>
@@ -39,11 +39,6 @@
         </div>
 
     </ion-content>
-
-    <ion-footer-bar class="bar-footer">
-
-        <play-bar></play-bar>
-    </ion-footer-bar>
-
+    <play-bar></play-bar>
 </ion-view>
 

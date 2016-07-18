@@ -117,16 +117,6 @@ angular.module('cosmic', ['ionic', 'ngCordova', 'cosmic.controllers', 'cosmic.se
 
         })
 
-        .state('app.songs', {
-            url: "/song",
-            controller: 'titleCtrl',
-            views: {
-                'menuContent': {
-                    templateUrl: "templates/rubyonic/songs.html"
-                }
-            }
-        })
-
         // .state('app.artists', {
         //     url: "/artists",
         //     controller: 'ArtistsCtrl',
@@ -289,6 +279,26 @@ angular.module('cosmic', ['ionic', 'ngCordova', 'cosmic.controllers', 'cosmic.se
 			}
 		}
 	})
+
+    .state('app.albums', {
+        url: '/albums',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/rubyonic/albums.html',
+                controller: 'ArtistsCtrl'
+            }
+        }
+    })
+
+    .state('app.songs', {
+        url: "/artists/:artistId",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/rubyonic/songs.html",
+                controller: 'titleCtrl'
+            }
+        }
+    })
 
 	.state('app.titles', {
 		url: '/artists/:artistId',
